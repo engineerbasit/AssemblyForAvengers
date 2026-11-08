@@ -1,0 +1,34 @@
+Program which prints 0 on screen with the help of ASCII code
+;This sign is used for comment
+
+.model small 
+;Defines the small memory model (one code segment and one data segment)
+
+.stack 100h 
+;Reserves 100H (256 bytes) of stack memory.
+
+.data 
+;Begins the data segment (no variables are declared here).
+
+
+.code 
+;Begins the code segment.
+
+Start:    ;Marks the starting point of the program.
+
+    Mov ah, 2h 
+    ;Selects DOS function 02H to display a single character.
+
+    Mov  dl,48   ; 48 is ASCII code of 0 
+    ;Stores ASCII code 48 (decimal) in DL, which represents character 0
+
+    Int 21h 
+    ;Calls DOS interrupt to display the character stored in DL
+
+    Mov ah, 4ch        
+    ;Selects the DOS function to terminate the program
+
+    Int 21h 
+    ;Executes the program termination
+End start  ;Marks the end of the program and specifies START as the entry point
+###############################################################################
